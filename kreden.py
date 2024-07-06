@@ -48,10 +48,10 @@ def logout():
 def create_connection():
     try:
         connection = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="",
-            database="quiz_app"
+            host="sql12.freesqldatabase.com",
+            user="sql12718204",
+            password="E2xX9CKCYj",
+            database="sql12718204"
         )
         return connection
     except mysql.connector.Error as err:

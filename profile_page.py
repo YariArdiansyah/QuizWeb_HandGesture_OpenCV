@@ -3,10 +3,10 @@ import mysql.connector
 
 def create_connection():
     return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="quiz_app"
+        host="sql12.freesqldatabase.com",
+        user="sql12718204",
+        password="E2xX9CKCYj",
+        database="sql12718204"
     )
 
 def get_user_profile(user_id):
