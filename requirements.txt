@@ -1,6 +1,6 @@
 streamlit
 mysql-connector-python
-streamlit_webrtc
+streamlit-webrtc
 opencv-python
 cvzone
 mediapipe

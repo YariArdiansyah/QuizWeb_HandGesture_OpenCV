@@ -49,7 +49,7 @@ class MCQ:
 # Kelas VideoProcessor untuk memproses video dan pertanyaan
 class VideoProcessor(VideoProcessorBase):
     def __init__(self, mcq_list):
-        self.cap = cv.VideoCapture(1)
+        self.cap = cv.VideoCapture(0)
         self.cap.set(3, 1280)
         self.cap.set(4, 720)
         self.detector = HandDetector(detectionCon=0.8)
@@ -203,7 +203,12 @@ def show_upload_and_start_quiz_page():
             reader = csv.reader(file)
             datafile = list(reader)[1:]
             mcq_list = [MCQ(q) for q in datafile]
-            webrtc_streamer(key="example", video_processor_factory=lambda: VideoProcessor(mcq_list))
+            webrtc_streamer(
+                key="example",
+                mode=WebRtcMode.SENDRECV,
+                video_processor_factory=lambda: VideoProcessor(mcq_list),
+                media_stream_constraints={"video": True, "audio": True},
+            )
 
     if st.button("Back to Home"):
         st.session_state.show_upload_page = False
