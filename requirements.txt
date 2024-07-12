@@ -3,4 +3,3 @@ mysql-connector-python
 streamlit_webrtc
 opencv-python
 cvzone
-cv
