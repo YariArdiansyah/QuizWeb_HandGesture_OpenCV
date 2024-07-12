@@ -49,7 +49,7 @@ class MCQ:
 # Kelas VideoProcessor untuk memproses video dan pertanyaan
 class VideoProcessor(VideoProcessorBase):
     def __init__(self, mcq_list):
-        self.cap = cv.VideoCapture(2)
+        self.cap = cv.VideoCapture(0)
         self.cap.set(3, 1280)
         self.cap.set(4, 720)
         self.detector = HandDetector(detectionCon=0.8)
